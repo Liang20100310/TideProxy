@@ -1,0 +1,60 @@
+# TideProxy（潮汐代理）- Python依赖清单
+# 作者：Yicheng Liang
+# 协议：GNU GPL v3.0
+#
+# 本项目主要使用Python标准库，仅需少量第三方依赖：
+# - aiohttp: 用于HTTP API服务器（可选，当前使用标准库http.server替代）
+#
+# 安装命令：pip install -r requirements.txt
+#
+# 注意：本项目核心功能仅依赖Python标准库（asyncio, csv, logging等），
+# 不安装任何第三方库也可正常运行基本代理功能。
+# 如需使用增强功能，可按需安装以下依赖。
+
+# ============================================================
+# 核心依赖（标准库，无需安装）
+# ============================================================
+# asyncio      - 异步IO框架（Python 3.4+内置）
+# csv          - CSV文件读写
+# logging      - 日志系统
+# socket       - 网络套接字
+# struct       - 二进制数据打包
+# threading    - 线程支持
+# hashlib      - 哈希算法
+# base64       - Base64编解码
+# argparse     - 命令行参数解析
+# signal       - 系统信号处理
+# json         - JSON处理
+# os           - 操作系统接口
+# sys          - 系统参数
+# time         - 时间处理
+# datetime     - 日期时间
+# collections  - 集合数据类型
+# random       - 随机数生成
+# string       - 字符串处理
+
+# ============================================================
+# 可选依赖（如需增强功能可安装）
+# ============================================================
+
+# 用于更高效的HTTP API服务器（可选，当前使用标准库实现）
+# aiohttp>=3.8.0
+
+# 用于更好的命令行颜色输出（可选）
+# colorama>=0.4.6
+
+# 用于系统监控功能（可选）
+# psutil>=5.9.0
+
+# ============================================================
+# 多协议加密依赖（Shadowsocks/VMess 必需）
+# ============================================================
+
+# 推荐：cryptography库（支持AEAD加密：aes-gcm, chacha20-poly1305）
+# 用于 Shadowsocks AEAD模式 和 VMess
+# 如果不安装，SS/VMess将无法使用
+cryptography>=41.0.0
+
+# 可选：pycryptodome（支持流式加密：aes-cfb, chacha20）
+# 用于 Shadowsocks 流式加密模式（旧版客户端兼容）
+# pycryptodome>=3.19.0
